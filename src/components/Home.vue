@@ -1,15 +1,9 @@
 <script setup>
-// import { ref } from 'vue'
 import {
     NLoadingBarProvider, NMessageProvider, NNotificationProvider, NDialogProvider,
     NLayout, NLayoutHeader, NLayoutFooter, NLayoutSider, NLayoutContent, NH2
 } from 'naive-ui'
 
-// defineProps({
-//     msg: String
-// })
-
-// const count = ref(0)
 </script>
 
 <template>
