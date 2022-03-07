@@ -1,7 +1,7 @@
 name: toolbox-se
-on: [push]
+on: [push, pull_request]
 jobs:
-  Explore-GitHub-Actions:
+  Testing:
     runs-on: ubuntu-latest
     steps:
       - run: echo "🎉 The job was automatically triggered by a ${{ github.event_name }} event."
@@ -13,6 +13,17 @@ jobs:
       - run: echo "🖥️ The workflow is now ready to test your code on the runner."
       - name: Testing
         uses: actions/checkout@v2
-      - run: npm install
+      - name: Cache dependencies
+        id: cache
+        uses: actions/cache@v2
+        with:
+          path: ./node_modules
+          key: modules-${{ hashFiles('package-lock.json') }}
+
+      - name: Install dependencies
+        if: steps.cache.outputs.cache-hit != 'true'
+        run: npm ci --ignore-scripts
+
       - run: npm test run
+
       - run: echo "🍏 This job's status is ${{ job.status }}."
