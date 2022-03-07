@@ -14,5 +14,5 @@ jobs:
       - name: Testing
         uses: actions/checkout@v2
       - run: npm install
-      - run: npm test
+      - run: npm test run
       - run: echo "🍏 This job's status is ${{ job.status }}."
