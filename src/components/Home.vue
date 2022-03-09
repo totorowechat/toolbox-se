@@ -1,9 +1,15 @@
 <script setup>
+
+import Test  from './Test.vue'
+import { ref } from "vue";
 import {
     NLoadingBarProvider, NMessageProvider, NNotificationProvider, NDialogProvider,
-    NLayout, NLayoutHeader, NLayoutFooter, NLayoutSider, NLayoutContent, NH2
+    NLayout, NLayoutHeader, NLayoutFooter, NLayoutSider, NLayoutContent, NH2,
+    NButton, NDatePicker, NInput, NInputGroup
 } from 'naive-ui'
 
+let range = ref([118313526e4, Date.now()])
+let value = ref(null)
 </script>
 
 <template>
@@ -20,18 +26,13 @@ import {
                                 show-trigger="arrow-circle"
                             >Handian Bridge</n-layout-sider>
                             <n-layout content-style="padding: 24px;">
-                                <n-h2>Pingshan Road</n-h2>
-                                <n-h2>Pingshan Road</n-h2>
-                                <n-h2>Pingshan Road</n-h2>
-                                <n-h2>Pingshan Road</n-h2>
-                                <n-h2>Pingshan Road</n-h2>
-                                <n-h2>Pingshan Road</n-h2>
-                                <n-h2>Pingshan Road</n-h2>
-                                <n-h2>Pingshan Road</n-h2>
-                                <n-h2>Pingshan Road</n-h2>
-                                <n-h2>Pingshan Road</n-h2>
-                                <n-h2>Pingshan Road</n-h2>
-                                <n-h2>Pingshan Road</n-h2>
+                                <Test />
+                                <div>打造安全、快捷、免费的在线工具箱</div>
+                                 <router-link to="/test">Go to test</router-link>
+                                <n-input-group>
+                                    <n-input :style="{ width: '50%' }" />
+                                    <n-button type="primary" ghost>搜索</n-button>
+                                </n-input-group>
                             </n-layout>
                         </n-layout>
                         <n-layout-footer
