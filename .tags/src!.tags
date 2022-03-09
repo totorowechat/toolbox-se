@@ -1,0 +1,16 @@
+!_CITRE_CMD	ctags|-o|%TAGSFILE%|--languages=JavaScript, |--kinds-all=*|--fields=*|--extras=*|-R|./src	/command line to generate this tags file/;"
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/;"	extras:pseudo
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/;"	extras:pseudo
+!_TAG_OUTPUT_EXCMD	mixed	/number, pattern, mixed, or combineV2/;"	extras:pseudo
+!_TAG_OUTPUT_FILESEP	slash	/slash or backslash/;"	extras:pseudo
+!_TAG_OUTPUT_MODE	u-ctags	/u-ctags or e-ctags/;"	extras:pseudo
+!_TAG_PATTERN_LENGTH_LIMIT	96	/0 for no limit/;"	extras:pseudo
+!_TAG_PROC_CWD	/Users/lingao/Repositories/toolbox-se/	//;"	extras:pseudo
+!_TAG_PROGRAM_AUTHOR	Universal Ctags Team	//;"	extras:pseudo
+!_TAG_PROGRAM_NAME	Universal Ctags	/Derived from Exuberant Ctags/;"	extras:pseudo
+!_TAG_PROGRAM_URL	https://ctags.io/	/official site/;"	extras:pseudo
+!_TAG_PROGRAM_VERSION	5.9.0	/4dfe9287/;"	extras:pseudo
+index.js	./src/router/index.js	1;"	kind:file	line:1	language:JavaScript	roles:def	extras:inputFile	end:12	epoch:1646670968
+main.js	./src/main.js	1;"	kind:file	line:1	language:JavaScript	roles:def	extras:inputFile	end:6	epoch:1646670988
+router	./src/router/index.js	/^const router = createRouter({$/;"	kind:constant	line:7	language:JavaScript	roles:def
+routes	./src/router/index.js	/^const routes = [{ path: '\/', component: Home }]$/;"	kind:constant	line:5	language:JavaScript	roles:def
