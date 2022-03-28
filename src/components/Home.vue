@@ -8,8 +8,7 @@ import {
     NButton, NDatePicker, NInput, NInputGroup
 } from 'naive-ui'
 
-let range = ref([118313526e4, Date.now()])
-let value = ref(null)
+import MainPage from './MainPage.vue'
 </script>
 
 <template>
@@ -26,20 +25,14 @@ let value = ref(null)
                                 show-trigger="arrow-circle"
                             >Handian Bridge</n-layout-sider>
                             <n-layout content-style="padding: 24px;">
-                                <Test />
-                                <div>打造安全、快捷、免费的在线工具箱</div>
-                                 <router-link to="/test">Go to test</router-link>
-                                <n-input-group>
-                                    <n-input :style="{ width: '50%' }" />
-                                    <n-button type="primary" ghost>搜索</n-button>
-                                </n-input-group>
+                                <MainPage />
                             </n-layout>
                         </n-layout>
                         <n-layout-footer
                             bordered
                             position="absolute"
                             style="height: 64px; padding: 24px"
-                        >road</n-layout-footer>
+                        >footer</n-layout-footer>
                     </n-layout>
                 </n-dialog-provider>
             </n-notification-provider>
