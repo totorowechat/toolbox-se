@@ -4,6 +4,7 @@ import {
     NLayout, NLayoutHeader, NLayoutFooter, NLayoutSider, NLayoutContent, NH2
 } from 'naive-ui'
 
+import MainPage from './MainPage.vue'
 </script>
 
 <template>
@@ -20,25 +21,14 @@ import {
                                 show-trigger="arrow-circle"
                             >Handian Bridge</n-layout-sider>
                             <n-layout content-style="padding: 24px;">
-                                <n-h2>Pingshan Road</n-h2>
-                                <n-h2>Pingshan Road</n-h2>
-                                <n-h2>Pingshan Road</n-h2>
-                                <n-h2>Pingshan Road</n-h2>
-                                <n-h2>Pingshan Road</n-h2>
-                                <n-h2>Pingshan Road</n-h2>
-                                <n-h2>Pingshan Road</n-h2>
-                                <n-h2>Pingshan Road</n-h2>
-                                <n-h2>Pingshan Road</n-h2>
-                                <n-h2>Pingshan Road</n-h2>
-                                <n-h2>Pingshan Road</n-h2>
-                                <n-h2>Pingshan Road</n-h2>
+                                <MainPage />
                             </n-layout>
                         </n-layout>
                         <n-layout-footer
                             bordered
                             position="absolute"
                             style="height: 64px; padding: 24px"
-                        >road</n-layout-footer>
+                        >footer</n-layout-footer>
                     </n-layout>
                 </n-dialog-provider>
             </n-notification-provider>
