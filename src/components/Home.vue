@@ -9,6 +9,8 @@ import {
 } from 'naive-ui'
 
 import MainPage from './MainPage.vue'
+import PageHeader from './PageHeader.vue'
+import SideMenu from './SideMenu.vue'
 </script>
 
 <template>
@@ -17,13 +19,16 @@ import MainPage from './MainPage.vue'
             <n-notification-provider>
                 <n-dialog-provider>
                     <n-layout position="absolute">
-                        <n-layout-header style="height: 64px; padding: 24px" bordered>Yiheyuan Road</n-layout-header>
+                        <n-layout-header style="height: 64px; padding: 24px" bordered>
+                            <page-header/>
+                        </n-layout-header>
                         <n-layout has-sider position="absolute" style="top: 64px; bottom: 64px">
                             <n-layout-sider
                                 bordered
                                 content-style="padding: 24px;"
-                                show-trigger="arrow-circle"
-                            >Handian Bridge</n-layout-sider>
+                                show-trigger="arrow-circle">
+                            <side-menu/> 
+                            </n-layout-sider>
                             <n-layout content-style="padding: 24px;">
                                 <MainPage />
                             </n-layout>
