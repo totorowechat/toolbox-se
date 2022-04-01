@@ -14,4 +14,14 @@ export default defineConfig({
     globals: true,
     environment: 'happy-dom',
   },
+  server: {
+    proxy: {
+      '/api': {
+        target: 'http://81.69.249.187/toolbox-se/',
+        changeOrigin: true,
+        rewrite: (path) => path.replace(/^\/api/, ''),
+        secure: false,
+      },
+    },
+  },
 })

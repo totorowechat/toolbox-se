@@ -1,6 +1,6 @@
 <script setup>
 
-import Test  from './Test.vue'
+import Test  from '@/components/Test.vue'
 import { ref } from "vue";
 import {
     NLoadingBarProvider, NMessageProvider, NNotificationProvider, NDialogProvider,
@@ -8,9 +8,11 @@ import {
     NButton, NDatePicker, NInput, NInputGroup
 } from 'naive-ui'
 
-import MainPage from './MainPage.vue'
-import PageHeader from './PageHeader.vue'
-import SideMenu from './SideMenu.vue'
+import SearchBar from '@/components/SearchBar.vue'
+import PageHeader from '@/components/PageHeader.vue'
+import SideMenu from '@/components/SideMenu.vue'
+import AllCards from '@/components/Cards/AllCards.vue'
+
 </script>
 
 <template>
@@ -29,15 +31,16 @@ import SideMenu from './SideMenu.vue'
                                 show-trigger="arrow-circle">
                             <side-menu/> 
                             </n-layout-sider>
-                            <n-layout content-style="padding: 24px;">
-                                <MainPage />
+                            <n-layout content-style="padding: 0px 24px 24px 24px;">
+                                <search-bar />
+                                  <all-cards/>
                             </n-layout>
                         </n-layout>
                         <n-layout-footer
                             bordered
                             position="absolute"
                             style="height: 64px; padding: 24px"
-                        >footer</n-layout-footer>
+                        >developed by Group 1</n-layout-footer>
                     </n-layout>
                 </n-dialog-provider>
             </n-notification-provider>
