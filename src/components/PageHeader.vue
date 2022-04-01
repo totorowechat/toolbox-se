@@ -1,5 +1,5 @@
 <script setup>
-
+import zapierLogo from '@/assets/logo.png'
 </script>
 
 <script>
@@ -45,7 +45,7 @@ export default defineComponent({
     </template>
     <template #avatar>
       <n-avatar
-        src="./assets/logo.png"
+        :src="zapierLogo"
       />
     </template>
     <template #extra>
