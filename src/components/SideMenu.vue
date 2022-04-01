@@ -7,10 +7,12 @@ import { defineComponent, h } from "vue";
 import { RouterLink } from "vue-router";
 import { NIcon, useMessage, NMenu} from "naive-ui";
 import {
-  BookOutline as BookIcon,
-  PersonOutline as PersonIcon,
-  WineOutline as WineIcon,
-  HomeOutline as HomeIcon
+  HammerOutline as ToolsIcon,
+  HomeOutline as HomeIcon,
+  TextOutline as TextIcon,
+  ImageOutline as ImageIcon,
+  FingerPrintOutline as LockIcon,
+  ChatbubbleEllipsesOutline as CommentsIcon
 } from "@vicons/ionicons5";
 
 function renderIcon(icon) {
@@ -21,10 +23,7 @@ const menuOptions = [
   {
     label: () => h(RouterLink, {
       to: {
-        name: "home",
-        params: {
-          lang: "en-US"
-        }
+        path: "/"
       }
     }, { default: () => "Going Home" }),
     key: "go-back-home",
@@ -42,30 +41,46 @@ const menuOptions = [
   {
     label: "Tools",
     key: "tools",
-    icon: renderIcon(BookIcon),
+    icon: renderIcon(ToolsIcon),
         children: [
           {
-            label: "Text Tools",
-            key: "text-tools"
+            label: () => h(RouterLink, {
+              to: {
+                path: "/TextTools"
+              }
+            }, { default: () => "Text Tools" }),
+            key: "text-tools",
+            icon: renderIcon(TextIcon)
           },
           {
-            label: "Video Tools",
-            key: "video-tools"
+            label: () => h(RouterLink, {
+              to: {
+                path: "/ImageTools"
+              }
+            }, { default: () => "Image Tools" }),
+            key: "image-tools",
+            icon: renderIcon(ImageIcon)
           },
           {
-            label: "Audio Tools",
-            key: "audio-tools"
+            label: () => h(RouterLink, {
+              to: {
+                path: "/EncryptTools"
+              }
+            }, { default: () => "Encrypt Tools" }),
+            key: "encrypt-tools",
+            icon: renderIcon(LockIcon)
           }
         ]
     },
     {
-    label: () => h("a", {
-      href: "https://en.wikipedia.org/wiki/Hear_the_Wind_Sing",
-      target: "_blank",
-      rel: "noopenner noreferrer"
-    }, "Comments"),
-    key: "comments"
-  }
+      label: () => h(RouterLink, {
+        to: {
+          path: "/Comments"
+        }
+      }, { default: () => "Comments" }),
+      key: "comments",
+      icon: renderIcon(CommentsIcon)
+    }
 ];
 
 export default defineComponent({

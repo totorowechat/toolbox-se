@@ -72,10 +72,10 @@ const message = ref("")
     </div>
   </div>
 
-  <div style="margin-top: 100px;">
+  <!-- <div style="margin-top: 100px;">
     <p>Message is: {{ message.toUpperCase() }}</p>
     <input v-model="message" placeholder="edit me" />
-  </div>
+  </div> -->
 
   <!-- <footer
     class="el-footer"

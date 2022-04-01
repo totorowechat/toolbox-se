@@ -1,5 +1,5 @@
 <script setup>
-
+import zapierLogo from '@/assets/logo.png'
 </script>
 
 <script>
@@ -34,10 +34,10 @@ export default defineComponent({
 
 <template>
   <header class="header">
-    <n-page-header subtitle="" @back="handleBack">
+    <n-page-header subtitle="">
     <template #title>
       <a
-        href="https://anyway.fm/"
+        href="/"
         style="text-decoration: none; color: inherit"
       >
         Toolbox
@@ -45,7 +45,7 @@ export default defineComponent({
     </template>
     <template #avatar>
       <n-avatar
-        src="https://cdnimg103.lizhi.fm/user/2017/02/04/2583325032200238082_160x160.jpg"
+        :src="zapierLogo"
       />
     </template>
     <template #extra>
