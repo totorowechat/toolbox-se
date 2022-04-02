@@ -78,11 +78,11 @@ const message = ref('')
   <div class="item-list">
     <a href=""></a>
     <n-space>
-      <router-link to="/random-num" class="block"><h4>randonNum</h4><p>select a random number</p></router-link>
+      <router-link to="/random-num" class="block"><h4>RandonNum</h4><p>select a random number</p></router-link>
       
-      <router-link to="/statistics-word-num" class="block"><h4>char</h4><p>统计字符数</p></router-link>
-      <router-link to="/translate-10-2" class="block"><h4>进制转换</h4><p>将十进制转换为二进制</p></router-link>
-      <router-link to="/translate-text-2-ascll" class="block"><h4>文字转ascll</h4><p>将文字转换为ASCII码</p></router-link>
+      <router-link to="/statistics-word-num" class="block"><h4>CharacterCount</h4><p>Count the number of character</p></router-link>
+      <router-link to="/translate-10-2" class="block"><h4>RadixConvert</h4><p>change decimal to binary system</p></router-link>
+      <router-link to="/translate-text-2-ascll" class="block"><h4>Texttoascll</h4><p>change text to Ascii</p></router-link>
     </n-space>
   </div>
   <!-- <footer
