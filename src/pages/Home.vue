@@ -3,9 +3,16 @@
 import Test  from '@/components/Test.vue'
 import { ref } from "vue";
 import {
-    NLoadingBarProvider, NMessageProvider, NNotificationProvider, NDialogProvider,
-    NLayout, NLayoutHeader, NLayoutFooter, NLayoutSider, NLayoutContent, NH2,
-    NButton, NDatePicker, NInput, NInputGroup
+  NLoadingBarProvider,
+  NMessageProvider,
+  NNotificationProvider,
+  NDialogProvider,
+  NLayout,
+  NLayoutHeader,
+  NLayoutFooter,
+  NLayoutSider,
+  NLayoutContent,
+  NH2,
 } from 'naive-ui'
 
 import SearchBar from '@/components/SearchBar.vue'
@@ -50,10 +57,10 @@ import AllCards from '@/components/Cards/AllCards.vue'
 
 <style scoped>
 a {
-    color: #42b983;
+  color: #42b983;
 }
 
 .home {
-    height: 100%;
+  height: 100%;
 }
 </style>
