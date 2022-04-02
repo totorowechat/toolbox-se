@@ -1,6 +1,7 @@
 <script setup>
-import {ref} from 'vue'
-const message = ref("")
+import { NSpace } from 'naive-ui'
+import { ref } from 'vue'
+const message = ref('')
 </script>
 
 <template>
@@ -72,11 +73,20 @@ const message = ref("")
     </div>
   </div>
 
-  <div style="margin-top: 100px;">
+  <div style="margin-top: 100px">
     <p>Message is: {{ message.toUpperCase() }}</p>
     <input v-model="message" placeholder="edit me" />
   </div>
-
+  <div class="item-list">
+    <a href=""></a>
+    <n-space>
+      <router-link to="/random-num" class="block"><h4>随机数</h4><p>可指定范围内进行随机数字</p></router-link>
+      
+      <router-link to="/statistics-word-num" class="block"><h4>字符统计</h4><p>统计字符数</p></router-link>
+      <router-link to="/translate-10-2" class="block"><h4>进制转换</h4><p>将十进制转换为二进制</p></router-link>
+      <router-link to="/translate-text-2-ascll" class="block"><h4>文字转ascll</h4><p>将文字转换为ASCII码</p></router-link>
+    </n-space>
+  </div>
   <!-- <footer
     class="el-footer"
     style="height: 380px; background-color: rgb(255, 255, 255)"
@@ -485,7 +495,7 @@ svg {
   transform: translateY(-2px);
 }
 .banner .data {
-    margin: 50px;
+  margin: 50px;
   background-color: #fff;
   --tw-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1),
     0 4px 6px -2px rgba(0, 0, 0, 0.05);
@@ -562,5 +572,55 @@ svg {
   100% {
     background-position: 0% 50%;
   }
+}
+.item-list {
+    overflow: hidden;
+    padding: 0 8px;
+    display: flex;
+    text-decoration: none;
+    flex-wrap: wrap;
+    
+}
+.item-list .block {
+    text-decoration: none;
+    width: 200px;
+    border: 1px solid;
+    margin: 12px 0;
+    padding: 0 12px!important;
+    flex: 0 0 20%;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    text-align: center;
+    display: block;
+    -webkit-box-shadow: 5px 10px 10px 0 #ecf0f3;
+    box-shadow: 5px 10px 10px 0 #ecf0f3;
+    border-radius: 8px;
+    background: #fff;
+    padding: 20px;
+    flex: 0 0 33.333%;
+    background-image: linear-gradient(43deg, #81d041, #507ac8);
+    animation: bganimation 15s ease-in-out infinite;
+    background-size: 400%;
+    background-position: 0 100%;
+    transform: translateZ(0);
+}
+.item-list .block h4 {
+    font-size: 18px;
+    line-height: 34px;
+    color: rgb(252, 248, 248);
+    font-weight: 500;
+    padding-top: 14px;
+    height: 34px;
+    overflow: hidden;
+}
+.item-list .block p {
+    color: rgb(250, 245, 245);
+    margin-bottom: 8px;
+    line-height: 24px;
+    height: 48px;
+    overflow: hidden;
+    text-align: center;
+    word-break: break-all;
+    padding-top: 5px;
 }
 </style>
