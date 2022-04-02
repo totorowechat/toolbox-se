@@ -74,8 +74,6 @@ const message = ref('')
   </div>
 
   <div style="margin-top: 100px">
-    <p>Message is: {{ message.toUpperCase() }}</p>
-    <input v-model="message" placeholder="edit me" />
   </div>
   <div class="item-list">
     <a href=""></a>
