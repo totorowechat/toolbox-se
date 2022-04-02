@@ -78,9 +78,9 @@ const message = ref('')
   <div class="item-list">
     <a href=""></a>
     <n-space>
-      <router-link to="/random-num" class="block"><h4>随机数</h4><p>可指定范围内进行随机数字</p></router-link>
+      <router-link to="/random-num" class="block"><h4>randonNum</h4><p>select a random number</p></router-link>
       
-      <router-link to="/statistics-word-num" class="block"><h4>字符统计</h4><p>统计字符数</p></router-link>
+      <router-link to="/statistics-word-num" class="block"><h4>char</h4><p>统计字符数</p></router-link>
       <router-link to="/translate-10-2" class="block"><h4>进制转换</h4><p>将十进制转换为二进制</p></router-link>
       <router-link to="/translate-text-2-ascll" class="block"><h4>文字转ascll</h4><p>将文字转换为ASCII码</p></router-link>
     </n-space>
