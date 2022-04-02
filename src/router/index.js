@@ -1,34 +1,38 @@
 import { createWebHashHistory, createRouter } from 'vue-router'
 
-import Home from '@/components/Home.vue'
+import Home from '@/pages/Home.vue'
+import Comments from '@/pages/Comments.vue'
+import TextTools from '@/pages/TextTools.vue'
+import ImageTools from '@/pages/ImageTools.vue'
+import EncryptTools from '@/pages/EncryptTools.vue'
+
+import Test from '@/components/Test.vue'
+
+import TextToUppercase from '@/pages/cardsPages/TextToUppercase.vue'
+import TextToUnicode from '@/pages/cardsPages/TextToUnicode.vue'
+import StringToMd5 from '@/pages/cardsPages/StringToMd5.vue'
+
+import randomNum from '@/views/random-num/index.vue'
+import statisticsWordNum from '@/views/statistics-word-num/index.vue'
+import translateDecimal from '@/views/transfate-10-2/index.vue'
+import translateText from '@/views/translate-text-2-ascll/index.vue'
 
 const routes = [
-  {
-    path: '/',
-    component: Home,
-    children: [
-      {
-        path: '',
-        component: () => import('../components/MainPage.vue'),
-      },
-      {
-        path: 'random-num',
-        component: () => import('../views/random-num/index.vue'),
-      },
-      {
-        path: 'statistics-word-num',
-        component: () => import('../views/statistics-word-num/index.vue'),
-      },
-      {
-        path: 'translate-10-2',
-        component: () => import('../views/transfate-10-2/index.vue'),
-      },
-      {
-        path: 'translate-text-2-ascll',
-        component: () => import('../views/translate-text-2-ascll/index.vue'),
-      },
-    ],
-  },
+  { path: '/', component: Home },
+  { path: '/Comments', component: Comments },
+
+  { path: '/TextTools', component: TextTools },
+  { path: '/ImageTools', component: ImageTools },
+  { path: '/EncryptTools', component: EncryptTools },
+
+  { path: '/test', component: Test },
+  { path: '/TextToUppercase', component: TextToUppercase },
+  { path: '/TextToUnicode', component: TextToUnicode },
+  { path: '/StringToMd5', component: StringToMd5 },
+  { path: '/random-num', component: randomNum },
+  { path: '/statistics-word-num', component: statisticsWordNum },
+  { path: '/translate-10-2', component: translateDecimal },
+  { path: '/translate-text-2-ascll', component: translateText },
 ]
 
 const router = createRouter({
