@@ -50,7 +50,7 @@ export default defineComponent({
     </template>
     <template #extra>
       <n-space>
-        <n-dropdown :options="options" placement="bottom-start">
+        <n-dropdown placement="bottom-start">
           <n-button :bordered="false" style="padding: 0 4px">
             Account
           </n-button>

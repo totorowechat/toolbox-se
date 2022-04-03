@@ -1,73 +1,72 @@
 <script setup>
-
-import Test  from '@/components/Test.vue'
-import { ref } from "vue";
+import { ref } from 'vue'
 import {
-    NLoadingBarProvider, NMessageProvider, NNotificationProvider, NDialogProvider,
-    NLayout, NLayoutHeader, NLayoutFooter, NLayoutSider, NLayoutContent, NH2,
-    NButton, NDatePicker, NInput, NInputGroup, NSpace, NH1,
+  NLoadingBarProvider,
+  NMessageProvider,
+  NNotificationProvider,
+  NDialogProvider,
+  NLayout,
+  NLayoutHeader,
+  NLayoutFooter,
+  NH2,
+  NButton,
+  NInput,
+  NSpace,
+  NDivider,
 } from 'naive-ui'
 
-import SearchBar from '@/components/SearchBar.vue'
 import PageHeader from '@/components/PageHeader.vue'
-import SideMenu from '@/components/SideMenu.vue'
-import AllCards from '@/components/Cards/AllCards.vue'
 
-const message = ref("")
+const message = ref(null)
+const result = ref('')
 
-
-function onClick(value){
-    fetch('api/md5?input=' + value)
-    .then(response => response.text())
-    // .then(s => document.getElementById('result'))
-    .then(data => console.log(data));
+function getResult() {
+  fetch('/api/md5?input=' + message.value)
+    .then((response) => response.json())
+    .then((data) => {
+      //   console.log(data)
+      result.value = data['result']
+    })
 }
-
-// const t = this.data
-
 </script>
 
 <template>
-    <n-loading-bar-provider>
-        <n-message-provider>
-            <n-notification-provider>
-                <n-dialog-provider>
-                    <n-layout position="absolute">
-                        <n-layout-header style="height: 64px; padding: 24px" bordered>
-                            <page-header/>
-                        </n-layout-header>
-                        <div style="margin-top: 100px;">
-                          <n-space vertical>
-                            <n-h2>Text to Unicode</n-h2>
-                            <n-input v-model:value="value" type="textarea" placeholder="Input here" style="width:30%"/>
-                            <n-button type="info" @click="onClick(value)">get result</n-button>
-                            <!-- <p>{t}</p> -->
-
-
-
-                            <!-- <input v-model="message" placeholder="edit me" />
-                            <p>Message is: {{ message.toUpperCase() }}</p> -->
-                          </n-space>
-                          
-                        </div>
-                        <n-layout-footer
-                            bordered
-                            position="absolute"
-                            style="height: 64px; padding: 24px"
-                        >developed by Group 1</n-layout-footer>
-                    </n-layout>
-                </n-dialog-provider>
-            </n-notification-provider>
-        </n-message-provider>
-    </n-loading-bar-provider>
+  <n-loading-bar-provider>
+    <n-message-provider>
+      <n-notification-provider>
+        <n-dialog-provider>
+          <n-layout position="absolute">
+            <n-layout-header style="height: 64px; padding: 24px" bordered>
+              <page-header />
+            </n-layout-header>
+            <div style="margin-top: 100px">
+              <n-space vertical>
+                <n-h2>Convert Text to MD5</n-h2>
+                <n-input
+                  v-model:value="message"
+                  type="textarea"
+                  placeholder="Input here"
+                  style="width: 30%"
+                />
+                Result: {{ result }}
+                <n-button type="info" @click="getResult">get result</n-button>
+              </n-space>
+            </div>
+            <n-layout-footer
+              bordered
+              position="absolute"
+              style="height: 64px; padding: 24px"
+              >developed by Group 1</n-layout-footer
+            >
+          </n-layout>
+        </n-dialog-provider>
+      </n-notification-provider>
+    </n-message-provider>
+  </n-loading-bar-provider>
 </template>
 
 <style scoped>
 a {
-    color: #42b983;
-}
-
-.home {
-    height: 100%;
+  color: #42b983;
 }
 </style>
