@@ -1,16 +1,10 @@
-<!--
- * @Description: 统计字数、汉字、标点、数字、字母、字符
- * @Author: Happy_Pedestrian
- * @Date: 2022-03-29 17:33:24
- * @LastEditTime: 2022-03-29 20:46:23
- * @LastEditors: Happy_Pedestrian
--->
+
 <template>
   <div>
-    <n-form-item label="字符串">
+    <n-form-item label="string">
       <n-input type="textarea" v-model:value="inputStr"></n-input>
     </n-form-item>
-    <n-form-item label="统计结果">
+    <n-form-item label="result">
       <n-space>
         <n-tag type="info" v-for="item in statisticResult"
           >{{ item.value }}个{{ item.label }}</n-tag
@@ -44,23 +38,23 @@ export default defineComponent({
   computed: {
     statisticResult() {
       const lenStatistics = {
-        label: '长度',
+        label: 'length',
         value: 0,
       }
       const zhStatistics = {
-        label: '汉字',
+        label: 'chinese character',
         value: 0,
       }
       const enStatistics = {
-        label: '字母',
+        label: 'letter',
         value: 0,
       }
       const numStatistics = {
-        label: '数字',
+        label: 'number',
         value: 0,
       }
       const chartStatistics = {
-        label: '字符',
+        label: 'string',
         value: 0,
       }
       this.inputStr.split('').forEach((chart) => {

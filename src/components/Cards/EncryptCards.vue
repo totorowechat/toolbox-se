@@ -39,7 +39,9 @@ function openPage(title) {
     width: 250px;
     flex-shrink: 0;
     margin: 10px 0;
-    cursor: pointer
+    cursor: pointer;
+    background-color: #8abce0;
+
     
   }
   .card:hover{
