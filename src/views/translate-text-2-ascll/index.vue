@@ -1,16 +1,10 @@
-<!--
- * @Description: 文本转ascll
- * @Author: Happy_Pedestrian
- * @Date: 2022-03-29 17:34:35
- * @LastEditTime: 2022-03-29 21:06:20
- * @LastEditors: Happy_Pedestrian
--->
+
 <template>
   <div>
-    <n-form-item label="字符串">
+    <n-form-item label="string">
       <n-input type="textarea" v-model:value="inputText"></n-input>
     </n-form-item>
-    <n-form-item label="二进制">
+    <n-form-item label="binary">
       <n-space>
         <n-tag type="info" v-for="item in resultText"
           >"{{ item.char }}" ascll:{{ item.ascll }}</n-tag

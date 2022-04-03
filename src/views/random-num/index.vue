@@ -1,10 +1,4 @@
-<!--
- * @Description: 可指定范围内进行随机数字
- * @Author: Happy_Pedestrian
- * @Date: 2022-03-29 17:32:26
- * @LastEditTime: 2022-03-29 20:18:37
- * @LastEditors: Happy_Pedestrian
--->
+
 <template>
   <div class="random-num-page">
     <div class="input-box">
@@ -17,29 +11,29 @@
         require-mark-placement="right-hanging"
         size="small"
       >
-        <n-form-item label="起始值" path="minNum">
+        <n-form-item label="initial value" path="minNum">
           <n-input-number
             v-model:value="form.minNum"
-            placeholder="请输入"
+            placeholder="please input"
             clearable
             style="width: 240px"
           />
         </n-form-item>
-        <n-form-item label="结束值" path="maxNum">
+        <n-form-item label="max value" path="maxNum">
           <n-input-number
             v-model:value="form.maxNum"
-            placeholder="请输入"
+            placeholder="please input"
             clearable
             style="width: 240px"
           />
         </n-form-item>
         <n-form-item>
-          <n-button type="primary" @click="getRandomNum">生成</n-button>
+          <n-button type="primary" @click="getRandomNum">generate</n-button>
         </n-form-item>
       </n-form>
     </div>
     <div class="result-box">
-      随机数：<n-input
+      random number: <n-input
         v-model:value="resultNum"
         :disabled="true"
         placeholder=""
@@ -92,14 +86,14 @@ export default defineComponent({
             type: 'number',
             required: true,
             trigger: ['blur', 'change'],
-            message: '请输入范围起始值',
+            message: 'please input initial value',
           },
           {
             type: 'number',
             trigger: ['blur', 'change'],
             validator(rule, value) {
               if (value >= maxNum) {
-                return new Error('范围起始值必须小于范围结束值')
+                return new Error('initial value must be smaller than the max value')
               }
               return true
             },
@@ -110,7 +104,7 @@ export default defineComponent({
             type: 'number',
             required: true,
             trigger: ['blur', 'change'],
-            message: '请输入范围结束值',
+            message: 'please input max value',
           },
         ],
       }

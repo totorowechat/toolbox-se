@@ -6,8 +6,8 @@
           <n-button text type="primary">see more</n-button>
         </template>
         <div class="card-list">
-          <n-card class="card" hoverable title="Image to Base64" size="small" @click="openPage('ImageToBase64')">
-            <p op60>turn all the elements in string to uppercase</p>
+          <n-card class="card" hoverable title="Image to Base64" size="small" @click="OnDev('Image to Base64 ')">
+            <p op60>turn image to base64 code</p>
           </n-card>
 
         </div>
@@ -19,10 +19,17 @@
 <script setup>
 import {NCard, NButton} from 'naive-ui'
 import { useRouter, RouterLink } from "vue-router";
+import { useMessage } from "naive-ui";
 
 const router = useRouter()
+const message = useMessage()
+
 function openPage(title) {
   router.push('/'+ title)
+}
+
+function OnDev(m) {
+  message.info(m + 'is on development/maintain, coming soon')
 }
 
 
@@ -38,8 +45,9 @@ function openPage(title) {
     width: 250px;
     flex-shrink: 0;
     margin: 10px 0;
-    cursor: pointer
-    
+    cursor: pointer;
+    background-color: #8abce0;
+
   }
   .card:hover{
     box-shadow: 0 1px 2px -2px #00000029, 0 3px 6px #0000001f, 0 5px 12px 4px #00000017;
