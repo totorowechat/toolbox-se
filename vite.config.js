@@ -17,9 +17,9 @@ export default defineConfig({
   server: {
     proxy: {
       '/api': {
-        target: 'http://81.69.249.187/toolbox-se/',
+        target: 'http://81.69.249.187',
         changeOrigin: true,
-        rewrite: (path) => path.replace(/^\/api/, ''),
+        // rewrite: (path) => path.replace(/^\/api/, ''),
         secure: false,
       },
     },
