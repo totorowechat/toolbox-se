@@ -22,16 +22,8 @@ jobs:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - uses: actions/checkout@v3
 
-      - name: Cache dependencies
-        id: cache
-        uses: actions/cache@v2
-        with:
-          path: ./node_modules
-          key: modules-${{ hashFiles('package-lock.json') }}
-
-      - name: Install dependencies
-        if: steps.cache.outputs.cache-hit != 'true'
-        run: npm ci --ignore-scripts
+      - uses: actions/setup-node@v3
+      - run: npm install
 
       - name: Build static file
         run: npm run build
@@ -49,5 +41,4 @@ jobs:
         run: rsync -avP ./dist/ ${{ secrets.SSH_USER }}@${{ secrets.SSH_HOST }}:nginx/dist/
   
       - run: echo "🍏 This job's status is ${{ job.status }}."
-      
-      
+  
