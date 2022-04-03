@@ -99,6 +99,7 @@ const message = ref('')
   background-position: 0 100%;
   animation: bganimation 15s ease-in-out infinite;
   transform: translateZ(0);
+  margin-bottom: 100px;
 }
 .banner h2 {
   font-size: 28px;
